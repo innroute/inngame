@@ -6,6 +6,6 @@ class CreateMemberships < ActiveRecord::Migration[5.2]
       t.string  :memberable_type
       t.timestamps
     end
-    add_index :pictures, [:memberable_type, :memberable_id]
+    add_index :memberships, [:memberable_type, :memberable_id]
   end
 end
