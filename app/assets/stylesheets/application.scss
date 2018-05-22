@@ -1,0 +1,72 @@
+/* colores */
+@import "materialize/components/color";
+$primary-color: #9bb291 !default;
+$secondary-color: #c4f4c7 !default;
+$ambiance-color:  #E8E1EF !default;
+$ambiance-darker: #0F141A !default;
+$ambiance-lighter: #DADDE1 !default;
+@import "materialize";
+@import "material_icons";
+
+div{
+  .primary{
+    background-color: $primary-color;
+  }
+  .secondary{
+    background-color: $secondary-color;
+  }
+  .ambiance-lighter{
+    background-color: $ambiance-lighter;
+  }
+  .ambiance-darker{
+    background-color: $ambiance-darker;
+  }
+}
+*{
+  .primary-text{
+    color: $primary-color;
+  }
+  .secondary-text{
+    color: $secondary-color;
+  }
+  .ambiance-darker-text{
+    color: $ambiance-darker;
+  }
+  .ambiance-lighter-text{
+    color: $ambiance-lighter;
+  }
+
+}
+
+/* footer adhesivo - sticky footer */
+.header-logo{
+  height: 100%;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: $ambiance-color;
+}
+main {
+  flex: 1 0 auto;
+}
+input[type="search"]:not(.browser-default){
+  margin: 0 0 0 0;
+}
+.no-margin-bottom{
+  margin-bottom: 0px;
+}
+
+/* flat search input */
+.flat-input .input-field input[type=search]:active {
+  border-bottom-width: 0px;
+  background-color: $ambiance-lighter;
+}
+.input-field input[type=search]:focus {
+  border-bottom-width: 0px;
+  box-shadow: 0px 0 0 #000;
+  background-color: $ambiance-lighter;
+  color: $secondary-color;
+  font-size: 2em;
+}
