@@ -13,6 +13,8 @@ class FleetsController < ApplicationController
       # TODO and flash messages
     end
   end
+  def show
+  end
   def update
   end
   def destroy

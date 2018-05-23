@@ -1,3 +1,6 @@
-li.collection-header
-  h4.teal-text
+li.collection-item
+  .teal-text
     = fleet.name
+    = link_to fleet_path(fleet.id), class: "secondary-content"
+      i.material-icons
+        | play_arrow
