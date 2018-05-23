@@ -1,3 +1,4 @@
 class Membership < ApplicationRecord
-  belongs_to :memberable, polymorphic: true
+  belongs_to :user
+  belongs_to :fleet
 end

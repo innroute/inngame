@@ -34,12 +34,13 @@ ActiveRecord::Schema.define(version: 2018_05_22_165625) do
   end
 
   create_table "memberships", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "fleet_id"
     t.string "name"
-    t.integer "memberable_id"
-    t.string "memberable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["memberable_type", "memberable_id"], name: "index_memberships_on_memberable_type_and_memberable_id"
+    t.index ["fleet_id"], name: "index_memberships_on_fleet_id"
+    t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
   create_table "stores", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -83,4 +84,6 @@ ActiveRecord::Schema.define(version: 2018_05_22_165625) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "memberships", "fleets"
+  add_foreign_key "memberships", "users"
 end
