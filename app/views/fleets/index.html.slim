@@ -1,28 +1,5 @@
-ul.collection.with-header
-  li.collection-header
-    h4
-      | Fleets
-  li.collection-item
-    div
-      | Barcelona
-      a.secondary-content[href="#!"]
-        i.material-icons
-          | send
-  li.collection-item
-    div
-      | Vilafranca
-      a.secondary-content[href="#!"]
-        i.material-icons
-          | send
-  li.collection-item
-    div
-      | Tarragona
-      a.secondary-content[href="#!"]
-        i.material-icons
-          | send
-  li.collection-item
-    div
-      | Zaragoza
-      a.secondary-content[href="#!"]
-        i.material-icons
-          | send
+.fixed-action-btn
+  = button_to new_fleet_path, class: "btn-floating btn-large teal", method: "get"
+    i.material-icons add
+ul.collection.with-header.z-depth-0
+  = render current_user.fleets

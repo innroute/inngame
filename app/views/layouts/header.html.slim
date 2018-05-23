@@ -1,6 +1,8 @@
 header
   /! Dropdown Structure
   ul#dropdown1.dropdown-content.z-depth-0
+    a
+      = link_to "Fleets", fleets_path, class: "ambiance-darker"
 
   nav.z-depth-0
     .nav-wrapper
@@ -9,12 +11,12 @@ header
           a.btn-flat.brand-logo.header-logo.waves-effect href="/"
             = "home"
         .input-field.col.s10
-          = form_tag root_path, method: 'get' do
-            i.material-icons.prefix.large.right
-              | search
-            = search_field_tag "query"
-            i.material-icons.left
-              | close
+          / = form_tag root_path, method: 'get' do
+          /   i.material-icons.prefix.large.right
+          /     | search
+          /   = search_field_tag "query"
+          /   i.material-icons.left
+          /     | close
         .col.s1
           - if current_user
             .row.no-margin-bottom

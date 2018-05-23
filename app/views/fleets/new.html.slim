@@ -1,0 +1,15 @@
+.row
+  .col.s8.offset-s2
+    .card.z-depth-0.transparent
+      .card-content
+        .card-title
+          h2 Create new Fleet
+        = form_for(@fleet, url: fleets_path) do |fleet|
+          .row
+            .input-field.col.s12
+              = fleet.label :name
+              br
+              = fleet.text_field :name, style: "font-size: 3em;"
+          .row
+            .col.s2
+              = fleet.submit "Create", class: "btn-large z-depth-0 ambiance-darker"
