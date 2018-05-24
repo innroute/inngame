@@ -1,6 +1,7 @@
 li.collection-item
-  .teal-text
-    = fleet.name
-    = link_to fleet_path(fleet.id), class: "secondary-content"
-      i.material-icons
-        | play_arrow
+  = link_to fleet_path(fleet.id)
+    .teal-text
+      = fleet.name
+      span.secondary-content
+        i.material-icons
+          | play_arrow
