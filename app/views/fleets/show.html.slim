@@ -1,12 +1,18 @@
 .row
-  .col.s12
-    h2.flow-text
-      = @fleet.name + "`s fleet resources"
+  .col.s6
     .card.z-depth-0
       .card-content
         span.card-title
           | Shop
         = link_to "Go to shop", fleet_shops_path(params[:id])
+  .col.s6
+    .card.z-depth-0
+      .card-content
+        span.card-title
+          | users
+        = link_to "Go to #{@fleet.name} fleet members", fleet_members_path(params[:id])
+    h2.flow-text
+      = @fleet.name + "`s fleet resources"
   .col.s3
     .card.z-depth-0
       .card-content
@@ -29,3 +35,6 @@
     .card.z-depth-0
       .card-content
         p.flow-text Trucks
+  .col.s12
+    h2.flow-text
+      = @fleet.name + "`s fleet buildings"

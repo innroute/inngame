@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :fleets do
     resources :shops
+    resources :members
   end
 
 end
