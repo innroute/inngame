@@ -15,6 +15,7 @@ class FleetsController < ApplicationController
     end
   end
   def show
+    @fleet = Fleet.find(params[:id])
   end
   def update
   end
