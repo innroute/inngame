@@ -1,3 +1,5 @@
 .fixed-action-btn
+  = button_to new_fleet_member_path, class: "btn-floating btn-large teal", method: "get"
+    i.material-icons add
 ul.collection.with-header.z-depth-0
   = render @fleet.users
