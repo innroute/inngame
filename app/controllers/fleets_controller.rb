@@ -6,6 +6,7 @@ class FleetsController < ApplicationController
   end
   def create
     @fleet = current_user.fleets.create!(fleet_params)
+    @fleet.create_goods_listing(metal: 1200, fiber: 600)
     if @fleet.save
       redirect_to fleets_path
     else
