@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_24_155038) do
+ActiveRecord::Schema.define(version: 2018_05_25_134708) do
 
   create_table "factories", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "metal"
@@ -18,12 +18,11 @@ ActiveRecord::Schema.define(version: 2018_05_24_155038) do
     t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "fleet_id"
+    t.index ["fleet_id"], name: "index_factories_on_fleet_id"
   end
 
   create_table "fleets", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.integer "metal"
-    t.integer "fiber"
-    t.integer "fuel"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
@@ -56,6 +55,8 @@ ActiveRecord::Schema.define(version: 2018_05_24_155038) do
     t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "fleet_id"
+    t.index ["fleet_id"], name: "index_stores_on_fleet_id"
   end
 
   create_table "truck_hubs", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -71,6 +72,10 @@ ActiveRecord::Schema.define(version: 2018_05_24_155038) do
     t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "fleet_id"
+    t.bigint "{:foreign_key=>true}_id"
+    t.index ["fleet_id"], name: "index_trucks_on_fleet_id"
+    t.index ["{:foreign_key=>true}_id"], name: "index_trucks_on_{:foreign_key=>true}_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|

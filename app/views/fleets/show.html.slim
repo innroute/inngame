@@ -9,32 +9,48 @@
     .card.z-depth-0
       .card-content
         span.card-title
-          | users
+          | Manage fleet members
         = link_to "Go to #{@fleet.name} fleet members", fleet_members_path(params[:id])
-    h2.flow-text
-      = @fleet.name + "`s fleet resources"
+  h2.flow-text
+    = @fleet.name + "`s fleet resources"
   .col.s3
-    .card.z-depth-0
+    .card.z-depth-0.transparent
       .card-content
         h3.flow-text Metal
         p.flow-text
           = @fleet.goods_listing.metal
   .col.s3
-    .card.z-depth-0
+    .card.z-depth-0.transparent
       .card-content
         h3.flow-text Fiber
         p.flow-text
           = @fleet.goods_listing.fiber
   .col.s3
-    .card.z-depth-0
+    .card.z-depth-0.transparent
       .card-content
         h3.flow-text Fuel
         p.flow-text
           = @fleet.goods_listing.fuel
   .col.s3
-    .card.z-depth-0
+    .card.z-depth-0.transparent
       .card-content
         p.flow-text Trucks
   .col.s12
     h2.flow-text
       = @fleet.name + "`s fleet buildings"
+    .col.s3
+      .card.z-depth-0.transparent
+        .card-content
+          h3.flow-text Fiber
+          p.flow-text
+            = @fleet.goods_listing.fiber
+    .col.s3
+      .card.z-depth-0.transparent
+        .card-content
+          h3.flow-text Fuel
+          p.flow-text
+            = @fleet.goods_listing.fuel
+    .col.s3
+      .card.z-depth-0.transparent
+        .card-content
+          p.flow-text Trucks
